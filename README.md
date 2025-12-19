@@ -299,9 +299,19 @@ Privileges: DBA (Super Admin)
 
 ## Tablespace configuration
 
-![table space](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/ad0712c033fedec9fad77f3330ca77e189b6b681)
+![table space](https://github.com/mileycyizadroid/tue_28220_mireille_healthcare_appointment_db/commit/ad0712c033fedec9fad77f3330ca77e189b6b681)
 
+## User setup documentation
 
+User setup involves creating a super admin user (mireille_admin) with DBA privileges inside the pluggable database to manage schema objects, security, and system operations, ensuring controlled and secure access to the healthcare appointment system.
 
+## Project structure overview
+
+The project is organized into clearly separated directories for database setup scripts, schema definitions, PL/SQL logic, documentation (ERD, BPMN, screenshots), and a central README to ensure maintainability, clarity, and easy GitHub submission.
+
+### PHASE V: Table Implementation & Data Insertion
+
+## Database Schema Creation
+The database schema creation was successful, with all tables, constraints, and relationships created without errors and verified within the pluggable database.
 
 
