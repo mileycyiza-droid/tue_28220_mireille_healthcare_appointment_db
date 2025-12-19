@@ -112,13 +112,13 @@ Doctor: Reviews and confirms availability.
 
 The system performs core MIS functions including:
 
-Data Collection: Captures patient information and doctor schedules.
+• Data Collection: Captures patient information and doctor schedules.
 
-Data Processing: Matches availability and applies scheduling rules.
+• Data Processing: Matches availability and applies scheduling rules.
 
-Decision Support: Uses predictive analytics to assess no-show risks and optimize scheduling.
+• Decision Support: Uses predictive analytics to assess no-show risks and optimize scheduling.
 
-Communication: Sends appointment confirmations and notifications to patients.
+• Communication: Sends appointment confirmations and notifications to patients.
 
 ### Organizational Impact
 
@@ -126,17 +126,166 @@ Implementing this system significantly improves healthcare operations by reducin
 
 ### Analytics Opportunities Identified
 
-Forecasting peak appointment demand periods.
+• Forecasting peak appointment demand periods.
 
-Identifying patients with high no-show risk.
+• Identifying patients with high no-show risk.
 
-Predicting doctor workload and availability.
+• Predicting doctor workload and availability.
 
-Detecting delays and scheduling bottlenecks for continuous improvement.
+•Detecting delays and scheduling bottlenecks for continuous improvement.
 
 ### PHASE III: Logical Model Design
 
 ### ER Diagram
-The ER diagram models patients, providers, appointments, waitlists, and audit logs, with primary and foreign keys enforcing integrity and derived attributes supporting predictive analytics for no-show risk and scheduling optimization.
+The ER diagram models patients, doctors, appointments, waitlists, and audit logs, with primary and foreign keys enforcing integrity and derived attributes supporting predictive analytics for no-show risk and scheduling optimization.
 
 ![er diadram](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/ERD%20PL%20DIAGRAM.png)
+
+## Normalization
+
+## First Normal Form (1NF) – Eliminate Repeating Groups
+
+• All tables have atomic (indivisible) values.
+
+• No multivalued attributes exist (e.g., phone numbers, appointments, providers are stored in separate rows).
+
+• Each table has a primary key to uniquely identify records.
+
+## Second Normal Form (2NF) – Eliminate Partial Dependencies
+
+• All non-key attributes depend on the entire primary key.
+
+• No table uses a composite primary key where attributes depend on only part of it.
+
+## Third Normal Form (3NF) – Eliminate Transitive Dependencies
+
+• Non-key attributes do not depend on other non-key attributes.
+
+• Descriptive data is moved to its own entity.
+
+### Justification of Normalization Approach
+
+The database is normalized to 3NF to:
+
+• Reduce redundancy
+
+• Prevent update anomalies
+
+• Ensure data integrity
+
+• Improve performance for transactional operations
+
+• Support accurate predictive analytics
+
+Normalization is balanced with BI needs by using audit and fact tables for analysis.
+
+### Data Dictionary
+## PATIENTS
+| Column          | Data Type    | Description               |
+| --------------- | ------------ | ------------------------- |
+| patient_id (PK) | INT          | Unique patient identifier |
+| full_name       | VARCHAR(100) | Patient full name         |
+| date_of_birth   | DATE         | Patient DOB               |
+| phone           | VARCHAR(20)  | Contact number            |
+| no_show_count   | INT          | Total missed appointments |
+
+## DOCTORS
+| Column           | Data Type    | Description              |
+| ---------------- | ------------ | ------------------------ |
+| doctor_id (PK)   | INT          | Unique doctor identifier |
+| full_name        | VARCHAR(100) | Doctor name              |
+| specialization   | VARCHAR(100) | Medical specialty        |
+| status           | VARCHAR(50)  | Availability status      |
+
+## APPOINTMENTS
+| Column               | Data Type    | Description                   |
+| -------------------- | ------------ | ----------------------------- |
+| appointment_id (PK)  | INT          | Appointment identifier        |
+| patient_id (FK)      | INT          | References PATIENTS           |
+| doctors_id (FK)      | INT          | References DOCTORS            |
+| appointment_datetime | TIMESTAMP    | Date & time                   |
+| urgency_level        | VARCHAR(50)  | Urgency classification        |
+| status               | VARCHAR(50)  | Scheduled/Cancelled/Completed |
+| no_show_risk         | DECIMAL(3,2) | Derived risk score            |
+
+## WAITLIST
+| Column           | Data Type | Description              |
+| ---------------- | --------- | ------------------------ |
+| waitlist_id (PK) | INT       | Waitlist entry ID        |
+| patient_id (FK)  | INT       | References PATIENTS      |
+| requested_slot   | TIMESTAMP | Desired appointment time |
+| priority_level   | INT       | Urgency ranking          |
+| date_added       | TIMESTAMP | Date added               |
+
+## APPOINTMENT_AUDIT_TRAIL
+| Column              | Data Type   | Description             |
+| ------------------- | ----------- | ----------------------- |
+| audit_id (PK)       | INT         | Audit identifier        |
+| appointment_id (FK) | INT         | References APPOINTMENTS |
+| old_status          | VARCHAR(50) | Previous status         |
+| new_status          | VARCHAR(50) | Updated status          |
+| change_timestamp    | TIMESTAMP   | Time of change          |
+| changed_by          | VARCHAR(50) | System/User             |
+
+## Constraints Documented
+
+• Primary Keys enforce uniqueness
+
+• Foreign Keys enforce referential integrity
+
+• NOT NULL on critical fields
+
+• Status fields use controlled values
+
+## Assumptions
+
+• One appointment is linked to one patient and one provider
+
+• No-show risk is calculated dynamically
+
+• Historical records are never deleted
+
+• Audit trail is append-only
+
+## BI (Business Intelligence) Considerations
+## Fact vs Dimension Tables
+
+• Fact Table: APPOINTMENTS
+
+    • Measures: no_show_risk, appointment_count
+
+• Dimension Tables: PATIENTS, PROVIDERS, TIME
+
+## Slowly Changing Dimensions (SCD)
+
+• PATIENTS: Type 1 (overwrite changes)
+
+• PROVIDERS: Type 2 (track history for workload analysis)
+
+## Aggregation Levels
+
+• Daily appointments
+
+• Monthly no-show trends
+
+• Provider workload per period
+
+• Urgency-based scheduling metrics
+
+## Audit Trail Design
+
+• APPOINTMENT_AUDIT_TRAIL captures:
+
+    • Status changes
+
+    • Time of change
+
+    • Responsible actor
+
+• Supports compliance, analytics, and performance monitoring
+
+### PHASE IV: Database Creation
+
+## Database creation(PDB Setup) 
+tue_28220_mireille_healthcare_appointment_db
+
