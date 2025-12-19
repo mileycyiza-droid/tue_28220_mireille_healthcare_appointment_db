@@ -19,8 +19,11 @@ PL/SQL, to predict patient no-shows, manage urgent cases efficiently, and dynami
 reschedule appointments. 
 
 Objectives: 
+
 • Reduce the impact of no-shows and increase clinic revenue. 
-• Prioritize urgent cases to improve care delivery. 
+
+• Prioritize urgent cases to improve care delivery.
+
 • Optimize provider schedules automatically. 
 
 ### 2. Core Functionalities 
