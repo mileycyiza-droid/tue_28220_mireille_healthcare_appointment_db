@@ -86,4 +86,4 @@ MIS Appointment System: Checks doctor availability and processes scheduling data
 Predictive Analytics Engine: Calculates no-show risk and recommends optimal time slots.
 Doctor: Reviews and confirms availability.
 
-
+![patients](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/BPMN.png)
