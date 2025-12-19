@@ -299,6 +299,8 @@ Privileges: DBA (Super Admin)
 
 ## Tablespace configuration
 
+![table space](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/ad0712c033fedec9fad77f3330ca77e189b6b681)
+
 
 
 
