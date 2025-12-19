@@ -71,3 +71,16 @@ availability.
 
  ## PHASE II: Business Process Modeling
 
+This business process models how a healthcare facility schedules patient appointments using an MIS-driven intelligent system enhanced with predictive analytics. The process begins when a patient requests an appointment and ends when the appointment is confirmed and an SMS notification is sent. The system improves efficiency by validating patient data, checking doctor availability, predicting no-show risks, and suggesting optimal appointment slots.
+
+### Main Components of the System
+
+The system consists of five main components represented as swimlanes in the BPMN diagram:
+
+Patient: Initiates the appointment request.
+Receptionist: Verifies patient details and confirms appointments.
+MIS Appointment System: Checks doctor availability and processes scheduling data.
+Predictive Analytics Engine: Calculates no-show risk and recommends optimal time slots.
+Doctor: Reviews and confirms availability.
+
+
