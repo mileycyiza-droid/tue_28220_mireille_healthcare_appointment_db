@@ -315,5 +315,5 @@ The project is organized into clearly separated directories for database setup s
 The database schema creation was successful, with all tables, constraints, and relationships created without errors and verified within the pluggable database.
 
 ![table creation](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/ee523409973bce327c19ee528a79d2df5b28b41f)
-![table creation]()
+![result for TC](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/7658ee904ecb8582cc4655fd348cfa50e1c60524)
 
