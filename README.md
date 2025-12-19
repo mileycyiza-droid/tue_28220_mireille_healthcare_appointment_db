@@ -106,7 +106,7 @@ Predictive Analytics Engine: Calculates no-show risk and recommends optimal time
 
 Doctor: Reviews and confirms availability.
 
-![patients](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/BPMN.png)
+![bpmn](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/BPMN.png)
 
 ### MIS Functions Explained
 
@@ -139,3 +139,4 @@ Detecting delays and scheduling bottlenecks for continuous improvement.
 ### ER Diagram
 The ER diagram models patients, providers, appointments, waitlists, and audit logs, with primary and foreign keys enforcing integrity and derived attributes supporting predictive analytics for no-show risk and scheduling optimization.
 
+![er diadram](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/ERD%20PL%20DIAGRAM.png)
