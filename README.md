@@ -289,3 +289,17 @@ Normalization is balanced with BI needs by using audit and fact tables for analy
 ## Database creation(PDB Setup) 
 tue_28220_mireille_healthcare_appointment_db
 
+## Admin User Details
+
+Username: mireille_admin
+
+Password: mireille
+
+Privileges: DBA (Super Admin)
+
+## Tablespace configuration
+
+
+
+
+
