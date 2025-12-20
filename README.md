@@ -346,7 +346,7 @@ Subqueries identified high-risk no-show patients and providers with the highest 
 ### PHASE VI: Database Interaction & Transactions
 
 ## Procedure
-We create procedures to handle database tasks automatically, like adding or updating patients and appointments.This makes the system faster, safer, and easier to manage.
+I create procedures to handle database tasks automatically, like adding or updating patients and appointments.This makes the system faster, safer, and easier to manage.
 CREATE OR REPLACE PROCEDURE add_patient (
     p_first_name IN VARCHAR2,
     p_last_name  IN VARCHAR2,
@@ -398,6 +398,11 @@ BEGIN
     COMMIT;
 END;
 /
+
+## Functions
+
+Functions are used in this project to retrieve specific information from the database.They return a single value, such as patient age, appointment count, or doctor availability, which helps in decision-making and reporting within the Healthcare Appointment System.
+
 
 
 
