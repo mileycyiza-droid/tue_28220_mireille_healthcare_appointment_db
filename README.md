@@ -319,7 +319,7 @@ The database schema creation was successful, with all tables, constraints, and r
 ## Data Insertion
 Realistic sample data was inserted to represent real healthcare scenarios, including normal cases and edge cases.The data was checked to ensure it follows all business rules and database constraints.
 
-![insert table]()
+![insert table](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/076852db44e5b617037beafe766169c5608addcd)
 
 
 
