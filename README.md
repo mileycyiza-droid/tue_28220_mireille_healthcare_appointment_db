@@ -347,16 +347,6 @@ Subqueries identified high-risk no-show patients and providers with the highest 
 
 ## Procedure
 We create procedures to handle database tasks automatically, like adding or updating patients and appointments.This makes the system faster, safer, and easier to manage.
-
--- =========================================
--- Healthcare Appointment System Procedures
--- Author: Mireille
--- Project: Healthcare Appointment DB
--- =========================================
-
--- Procedure: add_patient
--- Purpose: Add a new patient to the patients table
--- Inputs: p_first_name, p_last_name, p_age
 CREATE OR REPLACE PROCEDURE add_patient (
     p_first_name IN VARCHAR2,
     p_last_name  IN VARCHAR2,
@@ -369,11 +359,7 @@ BEGIN
     COMMIT;
 END;
 /
--- =========================================
 
--- Procedure: add_doctor
--- Purpose: Add a new doctor to the doctors table
--- Inputs: p_first_name, p_last_name, p_specialty
 CREATE OR REPLACE PROCEDURE add_doctor (
     p_first_name IN VARCHAR2,
     p_last_name  IN VARCHAR2,
@@ -386,11 +372,7 @@ BEGIN
     COMMIT;
 END;
 /
--- =========================================
 
--- Procedure: add_appointment
--- Purpose: Schedule a new appointment
--- Inputs: p_patient_id, p_doctor_id, p_date_time
 CREATE OR REPLACE PROCEDURE add_appointment (
     p_patient_id IN NUMBER,
     p_doctor_id  IN NUMBER,
@@ -403,11 +385,7 @@ BEGIN
     COMMIT;
 END;
 /
--- =========================================
 
--- Procedure: update_appointment_status
--- Purpose: Update the status of an existing appointment
--- Inputs: p_appointment_id, p_status
 CREATE OR REPLACE PROCEDURE update_appointment_status (
     p_appointment_id IN NUMBER,
     p_status         IN VARCHAR2
@@ -420,7 +398,7 @@ BEGIN
     COMMIT;
 END;
 /
--- =========================================
+
 
 
 
