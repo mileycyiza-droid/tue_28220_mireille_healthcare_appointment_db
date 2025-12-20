@@ -321,9 +321,107 @@ The database schema creation was successful, with all tables, constraints, and r
 ## Data Insertion
 Realistic sample data was inserted to represent real healthcare scenarios, including normal cases and edge cases.The data was checked to ensure it follows all business rules and database constraints.
 
+![insert](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/076852db44e5b617037beafe766169c5608addcd)
 
 ## Data Integrity
 Data integrity was verified using SELECT queries to ensure constraints were enforced and relationships between tables were valid.Foreign key checks confirmed that no orphan or inconsistent records exist.
+
+## Testing Queries Documentation
+
+Several SQL queries were executed to validate system functionality:
+
+• Basic Retrieval:
+Simple SELECT * queries were used to confirm data availability in each table.
+
+• Join Queries:
+Multi-table joins retrieved combined information such as patient names, doctor details, and appointment schedules.
+
+• Aggregation Queries:
+GROUP BY queries were used to analyze appointment counts per doctor, no-show trends, and daily scheduling volume.
+
+• Subqueries:
+Subqueries identified high-risk no-show patients and providers with the highest workload.
+
+
+### PHASE VI: Database Interaction & Transactions
+
+## Procedure
+We create procedures to handle database tasks automatically, like adding or updating patients and appointments.This makes the system faster, safer, and easier to manage.
+
+-- =========================================
+-- Healthcare Appointment System Procedures
+-- Author: Mireille
+-- Project: Healthcare Appointment DB
+-- =========================================
+
+-- Procedure: add_patient
+-- Purpose: Add a new patient to the patients table
+-- Inputs: p_first_name, p_last_name, p_age
+CREATE OR REPLACE PROCEDURE add_patient (
+    p_first_name IN VARCHAR2,
+    p_last_name  IN VARCHAR2,
+    p_age        IN NUMBER
+)
+IS
+BEGIN
+    INSERT INTO patients(first_name, last_name, age)
+    VALUES (p_first_name, p_last_name, p_age);
+    COMMIT;
+END;
+/
+-- =========================================
+
+-- Procedure: add_doctor
+-- Purpose: Add a new doctor to the doctors table
+-- Inputs: p_first_name, p_last_name, p_specialty
+CREATE OR REPLACE PROCEDURE add_doctor (
+    p_first_name IN VARCHAR2,
+    p_last_name  IN VARCHAR2,
+    p_specialty  IN VARCHAR2
+)
+IS
+BEGIN
+    INSERT INTO doctors(first_name, last_name, specialty)
+    VALUES (p_first_name, p_last_name, p_specialty);
+    COMMIT;
+END;
+/
+-- =========================================
+
+-- Procedure: add_appointment
+-- Purpose: Schedule a new appointment
+-- Inputs: p_patient_id, p_doctor_id, p_date_time
+CREATE OR REPLACE PROCEDURE add_appointment (
+    p_patient_id IN NUMBER,
+    p_doctor_id  IN NUMBER,
+    p_date_time  IN DATE
+)
+IS
+BEGIN
+    INSERT INTO appointments(patient_id, doctor_id, appointment_date)
+    VALUES (p_patient_id, p_doctor_id, p_date_time);
+    COMMIT;
+END;
+/
+-- =========================================
+
+-- Procedure: update_appointment_status
+-- Purpose: Update the status of an existing appointment
+-- Inputs: p_appointment_id, p_status
+CREATE OR REPLACE PROCEDURE update_appointment_status (
+    p_appointment_id IN NUMBER,
+    p_status         IN VARCHAR2
+)
+IS
+BEGIN
+    UPDATE appointments
+    SET status = p_status
+    WHERE appointment_id = p_appointment_id;
+    COMMIT;
+END;
+/
+-- =========================================
+
 
 
 
