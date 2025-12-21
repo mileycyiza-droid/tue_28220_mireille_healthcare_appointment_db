@@ -412,7 +412,7 @@ Functions are used in this project to retrieve specific information from the dat
 
 In this phase, the system enforces a restriction rule that blocks employees from inserting, updating, or deleting records on weekdays and public holidays, while allowing actions on weekends. All attempts are recorded in an audit log, capturing the employee information, action type, date, and status (ALLOWED or DENIED). This approach ensures data integrity, enforces business rules, and allows monitoring of all database activity for compliance.
 
-![results]()
+![trigger](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/Triggers.png?raw=true)
 
-![results](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/results%20for%20table%20creation.png?raw=true)
+![results](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/Triggers%20result.png?raw=true)
 
