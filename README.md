@@ -321,7 +321,7 @@ The database schema creation was successful, with all tables, constraints, and r
 ## Data Insertion
 Realistic sample data was inserted to represent real healthcare scenarios, including normal cases and edge cases.The data was checked to ensure it follows all business rules and database constraints.
 
-![insert]()
+![insert](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/results%20for%20inserting.png?raw=true)
 
 ## Data Integrity
 Data integrity was verified using SELECT queries to ensure constraints were enforced and relationships between tables were valid.Foreign key checks confirmed that no orphan or inconsistent records exist.
