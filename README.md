@@ -316,12 +316,12 @@ The database schema creation was successful, with all tables, constraints, and r
 
 ![table creation](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/Table%20creation.png?raw=true)
 
-![results]()
+![results](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/results%20for%20table%20creation.png?raw=true)
 
 ## Data Insertion
 Realistic sample data was inserted to represent real healthcare scenarios, including normal cases and edge cases.The data was checked to ensure it follows all business rules and database constraints.
 
-![insert](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/commit/076852db44e5b617037beafe766169c5608addcd)
+![insert]()
 
 ## Data Integrity
 Data integrity was verified using SELECT queries to ensure constraints were enforced and relationships between tables were valid.Foreign key checks confirmed that no orphan or inconsistent records exist.
