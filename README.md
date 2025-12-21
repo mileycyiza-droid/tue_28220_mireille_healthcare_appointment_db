@@ -408,8 +408,11 @@ END;
 
 Functions are used in this project to retrieve specific information from the database.They return a single value, such as patient age, appointment count, or doctor availability, which helps in decision-making and reporting within the Healthcare Appointment System.
 
+### PHASE VII: Advanced Programming & Auditing
 
+In this phase, the system enforces a restriction rule that blocks employees from inserting, updating, or deleting records on weekdays and public holidays, while allowing actions on weekends. All attempts are recorded in an audit log, capturing the employee information, action type, date, and status (ALLOWED or DENIED). This approach ensures data integrity, enforces business rules, and allows monitoring of all database activity for compliance.
 
+![results]()
 
-
+![results](https://github.com/mileycyiza-droid/tue_28220_mireille_healthcare_appointment_db/blob/main/results%20for%20table%20creation.png?raw=true)
 
