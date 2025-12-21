@@ -347,6 +347,8 @@ Subqueries identified high-risk no-show patients and providers with the highest 
 
 ## Procedure
 I create procedures to handle database tasks automatically, like adding or updating patients and appointments.This makes the system faster, safer, and easier to manage.
+
+```sql
 CREATE OR REPLACE PROCEDURE add_patient (
     p_first_name IN VARCHAR2,
     p_last_name  IN VARCHAR2,
@@ -398,6 +400,9 @@ BEGIN
     COMMIT;
 END;
 /
+
+```
+---
 
 ## Functions
 
